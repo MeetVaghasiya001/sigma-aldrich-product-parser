@@ -79,8 +79,9 @@ def process(file_name):
                     'package_type': p.get('packageType'),
                     'sku': p.get('materialNumber')
                 })
-    except:
-        pass
+    except Exception as e:
+        print(f'Error-{e}')
+        return 
 
     alies = [
         {'key': a.get('label'), 'value': a.get('value')}
